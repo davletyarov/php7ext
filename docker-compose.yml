@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  php:
+    build:
+      context: ./docker/php
+    ports:
+      - 8000:80
+    container_name: php-container
+    volumes:
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/hello.ini
+      - ./volumes/html:/var/www/html
